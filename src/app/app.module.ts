@@ -22,7 +22,6 @@ import {HomeModule} from './home/home.module';
     HttpModule,
     HomeModule
   ],
-  providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
