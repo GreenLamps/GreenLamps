@@ -8,13 +8,15 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import {HomeModule} from './home/home.module';
+import { LcResearchComponent } from './lc-research/lc-research.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LcResearchComponent
   ],
   imports: [
     BrowserModule,
