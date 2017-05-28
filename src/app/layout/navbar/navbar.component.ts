@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public imageSources: string[] = [
+    '../../../assets/img/lb1.jpg',
+    '../../../assets/img/lb2.jpg',
+    '../../../assets/img/lb1.jpg',
+    '../../../assets/img/lb2.jpg'
+  ];
 
+  public config: ICarouselConfig = {
+    verifyBeforeLoad: true,
+    log: false,
+    animation: true,
+    animationType: AnimationConfig.SLIDE,
+    autoplay: true,
+    autoplayDelay: 3000,
+    stopAutoplayMinWidth: 500
+  };
+
+  constructor() { }
   ngOnInit() {
   }
 
