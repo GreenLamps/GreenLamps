@@ -588,6 +588,12 @@ float: left;
             width:2.7rem;
 			height:3.2rem;
 		}
+    #fenggouyi1 carousel div carousel-slide img{
+      display:block;
+      position:relative;
+      width:2.7rem;
+      height:3.2rem;
+    }
 		#fenggouyi1 #num_list1{
 			width:2.7rem;
 			height:0.212rem;
@@ -1178,7 +1184,7 @@ float: left;
 	font-family: "微软雅黑";
 	color:#444444;
 	height:0.3rem;
-	border-bottom: 1px solid red; 
+	border-bottom: 1px solid red;
 }
 .infos span{
 	margin-left:1.8rem;

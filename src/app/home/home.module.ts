@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {HOME_ROUTE} from './home.route';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
+import {HomeComponent} from './home.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,8 @@ import {BrowserModule} from '@angular/platform-browser';
     RouterModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: []
+  declarations: [
+    HomeComponent
+  ]
 })
 export class HomeModule { }
