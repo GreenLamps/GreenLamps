@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LcResearchComponent } from './lc-research.component';
+import { LclResearchComponent } from './lcl-research.component';
 
-describe('LcResearchComponent', () => {
-  let component: LcResearchComponent;
-  let fixture: ComponentFixture<LcResearchComponent>;
+describe('LclResearchComponent', () => {
+  let component: LclResearchComponent;
+  let fixture: ComponentFixture<LclResearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LcResearchComponent ]
+      declarations: [ LclResearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LcResearchComponent);
+    fixture = TestBed.createComponent(LclResearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

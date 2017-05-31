@@ -8,7 +8,7 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './layout/navbar/navbar.component';
 import {FooterComponent} from './layout/footer/footer.component';
 import {HomeModule} from './home/home.module';
-import {LcResearchModule} from './lc-research/lc-research.module';
+import {LclResearchModule} from './lcl-research/lcl-research.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +22,11 @@ import {LcResearchModule} from './lc-research/lc-research.module';
     HttpModule,
     CarouselModule,
     HomeModule,
-    LcResearchModule,
+    LclResearchModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
