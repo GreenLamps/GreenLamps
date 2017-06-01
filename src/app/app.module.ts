@@ -10,12 +10,20 @@ import {FooterComponent} from './layout/footer/footer.component';
 import {HomeModule} from './home/home.module';
 import {LclResearchModule} from './lcl-research/lcl-research.module';
 import {TradeAdvisoryModule} from './trade-advisory/trade-advisory.module';
+import { PolicyStandardComponent } from './policy-standard/policy-standard.component';
+import { CentralgovDocComponent } from './policy-standard/centralgov-doc/centralgov-doc.component';
+import { LocalgovDocComponent } from './policy-standard/localgov-doc/localgov-doc.component';
+import { InternationalStdComponent } from './policy-standard/international-std/international-std.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PolicyStandardComponent,
+    CentralgovDocComponent,
+    LocalgovDocComponent,
+    InternationalStdComponent
   ],
   imports: [
     BrowserModule,
