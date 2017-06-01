@@ -9,6 +9,7 @@ import {NavbarComponent} from './layout/navbar/navbar.component';
 import {FooterComponent} from './layout/footer/footer.component';
 import {HomeModule} from './home/home.module';
 import {LclResearchModule} from './lcl-research/lcl-research.module';
+import {TradeAdvisoryModule} from './trade-advisory/trade-advisory.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {LclResearchModule} from './lcl-research/lcl-research.module';
     HttpModule,
     CarouselModule,
     HomeModule,
-    LclResearchModule
+    LclResearchModule,
+    TradeAdvisoryModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
