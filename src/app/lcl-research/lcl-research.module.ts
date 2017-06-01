@@ -8,22 +8,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {LclResearchComponent} from './lcl-research.component';
 import {LCLRESEARCH_ROUTE} from './lcl-research.route';
-import { CenterNewsComponent } from './center-news/center-news.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import {BriefIntroModule} from './brief-intro/brief-intro.modules';
+import {CenterNewsModule} from './center-news/center-news.modules';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     BriefIntroModule,
+    CenterNewsModule,
     RouterModule.forRoot([ LCLRESEARCH_ROUTE ], { useHash: true }),
   ],
   declarations: [
-    LclResearchComponent,
-    CenterNewsComponent,
-    AboutUsComponent,
-    ContactUsComponent
+    LclResearchComponent
   ],
   exports: [
     RouterModule
