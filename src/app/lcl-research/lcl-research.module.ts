@@ -10,12 +10,14 @@ import {LclResearchComponent} from './lcl-research.component';
 import {LCLRESEARCH_ROUTE} from './lcl-research.route';
 import {BriefIntroModule} from './brief-intro/brief-intro.modules';
 import {CenterNewsModule} from './center-news/center-news.modules';
+import {AboutUsModule} from './about-us/about-us.module';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     BriefIntroModule,
     CenterNewsModule,
+    AboutUsModule,
     RouterModule.forRoot([ LCLRESEARCH_ROUTE ], { useHash: true }),
   ],
   declarations: [
