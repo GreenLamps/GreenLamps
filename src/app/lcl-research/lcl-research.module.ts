@@ -11,6 +11,7 @@ import {LCLRESEARCH_ROUTE} from './lcl-research.route';
 import {BriefIntroModule} from './brief-intro/brief-intro.modules';
 import {CenterNewsModule} from './center-news/center-news.modules';
 import {AboutUsModule} from './about-us/about-us.module';
+import {ContactUsModule} from './contact-us/contact-us.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import {AboutUsModule} from './about-us/about-us.module';
     BriefIntroModule,
     CenterNewsModule,
     AboutUsModule,
-    RouterModule.forRoot([ LCLRESEARCH_ROUTE ], { useHash: true }),
+    ContactUsModule,
+    RouterModule.forRoot([LCLRESEARCH_ROUTE], {useHash: true}),
   ],
   declarations: [
     LclResearchComponent
