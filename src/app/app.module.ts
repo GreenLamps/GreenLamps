@@ -12,8 +12,12 @@ import {LclResearchModule} from './lcl-research/lcl-research.module';
 import {TradeAdvisoryModule} from './trade-advisory/trade-advisory.module';
 import {PolicyStandardModule} from './policy-standard/policy-standard.module';
 import {ExpertViewsModule} from './expert-views/expert-views.module';
-import { ProjectDemoComponent } from './project-demo/project-demo.component';
-import {ProjectDemoModule} from "./project-demo/project-demo.module";
+import {ProjectDemoModule} from './project-demo/project-demo.module';
+import {BiddingProcurementModule} from './bidding-procurement/bidding-procurement.module';
+import {OfficialJournalModule} from './official-journal/official-journal.module';
+import {DocumentLibraryModule} from './document-library/document-library.module';
+import {OnlineCourseModule} from './online-course/online-course.module';
+import {ExpertLibraryModule} from './expert-library/expert-library.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,11 @@ import {ProjectDemoModule} from "./project-demo/project-demo.module";
     PolicyStandardModule,
     ExpertViewsModule,
     ProjectDemoModule,
+    BiddingProcurementModule,
+    OfficialJournalModule,
+    DocumentLibraryModule,
+    OnlineCourseModule,
+    ExpertLibraryModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

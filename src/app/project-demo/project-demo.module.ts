@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {PROJECT_DEMO_ROUTE} from './project-demo.route';
 import {ProjectDemoComponent} from './project-demo.component';
 import {SelectedCaseModule} from './selected-case/selected-case.module';
+import {AuthorityCommentModule} from './authority-comment/authority-comment.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +22,7 @@ import {SelectedCaseModule} from './selected-case/selected-case.module';
   exports: [
     RouterModule,
     SelectedCaseModule,
+    AuthorityCommentModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
