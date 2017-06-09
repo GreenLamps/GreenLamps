@@ -637,7 +637,7 @@ float: left;
 }
 .Con-Two{
 	width:16rem;
-	height:4.2rem;
+	height:4.3rem;
 	background:#eee;
 	padding: 0.0001rem;
 	margin-top:0.22rem;
@@ -888,6 +888,38 @@ float: left;
 	height:1.7rem;
 	margin-left:0.12rem;
 	margin-top:0.1rem;
+}
+.Con-Si2{
+	width:12.5rem;
+	height:3.5rem;
+	margin:0.2rem auto;
+}
+.Con-Si2 a img{
+	float: left;
+	width:2.95rem;
+	height:3.2rem;
+	margin-top:0.25rem;
+}
+.Con-Si2 a h1{
+	width:5.5rem;
+	float: left;
+	margin-left:0.3rem;
+	margin-top:0.25rem;
+	font-size: 0.3rem;
+	color:#2d2d2d;
+	font-family: "微软雅黑";
+	font-weight: 800;
+	letter-spacing:0.03rem;
+}
+.Con-Si2 a p{
+	width:9.2rem;
+	float: left;
+	margin-left:0.3rem;
+	margin-top:0.2rem;
+	font-size: 0.14rem;
+	color:#2d2d2d;
+	font-family: "微软雅黑";
+	letter-spacing:0.03rem;
 }
 .Footer{
 	height:2.08rem;

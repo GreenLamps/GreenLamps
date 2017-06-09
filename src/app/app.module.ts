@@ -43,6 +43,7 @@ import {ExpertLibraryModule} from './expert-library/expert-library.module';
     ExpertLibraryModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],
   bootstrap: [AppComponent]
 })
 
