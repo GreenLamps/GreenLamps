@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ContentGreemLampService} from '../entities/content/content-green-lamp.service';
+import {ContentGreenLampService} from '../entities/content/content-green-lamp.service';
 
 @Component({
   selector: 'app-online-course',
@@ -8,7 +8,7 @@ import {ContentGreemLampService} from '../entities/content/content-green-lamp.se
 })
 export class OnlineCourseComponent implements OnInit {
 
-  constructor(private contentGreenLampService: ContentGreemLampService) { }
+  constructor(private contentGreenLampService: ContentGreenLampService) { }
 
   ngOnInit() {
     // this.contentGreenLampService.find();

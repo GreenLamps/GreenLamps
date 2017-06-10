@@ -18,6 +18,7 @@ import {OfficialJournalModule} from './official-journal/official-journal.module'
 import {DocumentLibraryModule} from './document-library/document-library.module';
 import {OnlineCourseModule} from './online-course/online-course.module';
 import {ExpertLibraryModule} from './expert-library/expert-library.module';
+import {ContentGreenLightsResolvePagingParams} from './config/content-green-lamps-resolve-paging-params';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import {ExpertLibraryModule} from './expert-library/expert-library.module';
     ExpertLibraryModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    ContentGreenLightsResolvePagingParams,
+  ],
   bootstrap: [AppComponent]
 })
 

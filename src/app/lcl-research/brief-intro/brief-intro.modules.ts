@@ -7,14 +7,18 @@ import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {BriefIntroComponent} from './brief-intro.component';
+import {GreenLampsSharedModule} from '../../config/lib/shared.module';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot([ BRIEFINTRO_ROUTE ], { useHash: true })
+    RouterModule.forRoot([ BRIEFINTRO_ROUTE ], { useHash: true }),
+    GreenLampsSharedModule,
   ],
   declarations: [
     BriefIntroComponent,
+  ],
+  providers: [
   ],
   exports: [
     RouterModule

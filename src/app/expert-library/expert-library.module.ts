@@ -7,7 +7,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {EXPERT_LIBRARY_ROUTE} from './expert-library.route';
 import {ExpertLibraryComponent} from './expert-library.component';
-import {ContentGreemLampService} from '../entities/content/content-green-lamp.service';
+import {ContentGreenLampService} from '../entities/content/content-green-lamp.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import {ContentGreemLampService} from '../entities/content/content-green-lamp.se
     RouterModule,
   ],
   providers: [
-    ContentGreemLampService,
+    ContentGreenLampService,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

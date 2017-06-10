@@ -1,4 +1,4 @@
-export class ContentGreenLights {
+export class ContentGreenLamp {
     constructor(public id?: number,
                 public title?: string,
                 public source?: string,
@@ -10,6 +10,7 @@ export class ContentGreenLights {
                 public viewCount?: number,
                 public createTime?: any,
                 public categoryId?: number,
+                public categoryName?: string,
                 public attachmentId?: number,
                 public url?: string,
                 public location?: string) {
