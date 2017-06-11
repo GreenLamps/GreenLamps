@@ -8,4 +8,7 @@ export const environment = {
   baseUrl: 'http://localhost:8080',
   ITEMS_PER_PAGE: 20,
   BRIEF_INTRO: 12,
+  CENTER_NEWS: 13,
+  ABOUT_US: 14,
+  CONTACT_US: 15,
 };

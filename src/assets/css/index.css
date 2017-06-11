@@ -1043,7 +1043,7 @@ float: left;
 	font-size: 0.24rem;
 	font-family: "微软雅黑";
 	color:#528b00;
-	width:1.8rem;
+	width:2.4rem;
 	line-height:0.52rem;
 	float: left;
 	letter-spacing:0.05rem;
@@ -1303,7 +1303,7 @@ float: left;
 	font-family: "微软雅黑";
 	color:#444444;
 	height:0.3rem;
-	border-bottom: 1px solid red; 
+	border-bottom: 1px solid red;
 }
 .infos span{
 	margin-left:1.8rem;

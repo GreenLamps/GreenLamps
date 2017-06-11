@@ -6,32 +6,22 @@
   <div class="ContentZ-Two">
     <div class="ContentZ-Two1">
       <h1>低碳照明研究中心</h1>
-      <p>首页>低碳照明研究中心>中心要闻</p>
+      <p>
+        首页 >
+        <a routerLink='/lcl-research' routerLinkActive='active'>低碳照明研究中心</a> >
+        <a routerLink='/lcl-research/center-news' routerLinkActive='active'>中心要闻</a>
+      </p>
     </div>
     <div class="ContentZ-Two2">
       <ul>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
-        <a href="content.html"><li>黄跃辉-低碳照明，是城市照明发展的动力，低碳......</li></a>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/lcl-research/center-news/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
+        </li>
       </ul>
       <ol>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
-        <a href="content.html"><li>[2017/05/12]</li></a>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/lcl-research/center-news/{{content.id}}' routerLinkActive='active'>{{content.createTime}}</a>
+        </li>
       </ol>
     </div>
   </div>

@@ -7,11 +7,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {CenterNewsComponent} from './center-news.component';
 import {CENTERNEWS_ROUTE} from './center-news.route';
+import {GreenLampsSharedModule} from '../../config/lib/shared.module';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot([ CENTERNEWS_ROUTE ], { useHash: true })
+    RouterModule.forRoot([ CENTERNEWS_ROUTE ], { useHash: true }),
+    GreenLampsSharedModule,
   ],
   declarations: [
     CenterNewsComponent,

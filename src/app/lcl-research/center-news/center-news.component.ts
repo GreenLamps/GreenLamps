@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {environment} from '../../../environments/environment';
+import {PaginationUtil, ParseLinks} from 'ng-jhipster';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ContentGreenLampService} from '../../entities/content/content-green-lamp.service';
+import {ContentGreenLamp} from '../../entities/content/content-green-lamp.model';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-center-news',
@@ -6,10 +12,63 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./center-news.component.css']
 })
 export class CenterNewsComponent implements OnInit {
+  contents: ContentGreenLamp[];
+  error: any;
+  success: any;
+  routeData: any;
+  links: any;
+  totalItems: any;
+  queryCount: any;
+  itemsPerPage: any;
+  page: any;
+  predicate: any;
+  previousPage: any;
+  reverse: any;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private contentGreenLampService: ContentGreenLampService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private paginationUtil: PaginationUtil,
+              private parseLinks: ParseLinks,) {
+    this.itemsPerPage = environment.ITEMS_PER_PAGE;
+    this.routeData = this.activatedRoute.data.subscribe((data) => {
+      this.page = data['pagingParams'].page;
+      this.previousPage = data['pagingParams'].page;
+      this.reverse = data['pagingParams'].ascending;
+      this.predicate = data['pagingParams'].predicate;
+    });
   }
 
+  ngOnInit() {
+    const req = {
+      page: this.page - 1,
+      size: this.itemsPerPage,
+      sort: this.sort()
+    };
+    this.contentGreenLampService.findByCategory(environment.CENTER_NEWS, req)
+      .subscribe(
+        (res: Response) => this.onSuccess(res.json(), res.headers),
+        (res: Response) => this.onError(res.json())
+      );
+    return;
+  }
+
+  private onSuccess(data, headers): void {
+    this.contents = data;
+    this.totalItems = headers.get('X-Total-Count');
+    this.links = this.parseLinks.parse(headers.get('Link'));
+    this.queryCount = this.totalItems;
+  }
+
+  private onError(error): void {
+    console.error(error.message, null, null);
+  }
+
+  sort() {
+    const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
+    if (this.predicate !== 'id') {
+      result.push('id');
+    }
+    return result;
+  }
 }
