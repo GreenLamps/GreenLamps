@@ -2,25 +2,28 @@
   <div class="ContentZ-One">
     <h1>中国低碳照明网</h1>
     <p><a routerLink='/lcl-research/center-briefintro' routerLinkActive='active'>中心简介</a></p>
+    <p><a routerLink='/lcl-research/center-news' routerLinkActive='active'>中心要闻</a></p>
+    <p><a routerLink='/lcl-research/center-aboutus' routerLinkActive='active'>关于我们</a></p>
+    <p><a routerLink='/lcl-research/center-contactus' routerLinkActive='active'>联系我们</a></p>
   </div>
   <div class="ContentZ-Two">
     <div class="ContentZ-Two1">
       <h1>低碳照明研究中心</h1>
       <p>
-        首页 >
+        <a routerLink='/' routerLinkActive='active'>首页</a> >
         <a routerLink='/lcl-research' routerLinkActive='active'>低碳照明研究中心</a> >
-        <a routerLink='/lcl-research/center-briefintro' routerLinkActive='active'>中心要闻</a>
+        <a routerLink='/lcl-research/center-briefintro' routerLinkActive='active'>中心简介</a>
       </p>
     </div>
     <div class="ContentZ-Two2">
       <ul>
         <li *ngFor = "let content of contents">
-          <a routerLink='/lcl-research/center-briefintro/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
         </li>
       </ul>
       <ol>
         <li *ngFor = "let content of contents">
-          <a routerLink='/lcl-research/center-briefintro/{{content.id}}' routerLinkActive='active'>{{content.createTime}}</a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.createTime}}</a>
         </li>
       </ol>
     </div>
