@@ -1,3 +1,32 @@
-<p>
-  prof-book works!
-</p>
+<div class="ContentZ">
+  <div class="ContentZ-One">
+    <h1>中国低碳照明网</h1>
+    <p><a routerLink='/document-library/prof-book' routerLinkActive='active'>专业书籍</a></p>
+    <p><a routerLink='/document-library/academic-paper' routerLinkActive='active'>学术论文</a></p>
+    <p><a routerLink='/document-library/research-report' routerLinkActive='active'>研究报告</a></p>
+    <p><a routerLink='/document-library/video-image' routerLinkActive='active'>视频图片</a></p>
+  </div>
+  <div class="ContentZ-Two">
+    <div class="ContentZ-Two1">
+      <h1>资料阅读</h1>
+      <p>
+        <a routerLink='/' routerLinkActive='active'>首页</a> >
+        <a routerLink='/document-library' routerLinkActive='active'>资料阅读</a> >
+        <a routerLink='/document-library/prof-book' routerLinkActive='active'>专业书籍</a>
+      </p>
+    </div>
+    <div class="ContentZ-Two2">
+      <ul>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
+        </li>
+      </ul>
+      <ol>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>[{{content.createTime}}]</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+

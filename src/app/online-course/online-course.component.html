@@ -1,3 +1,28 @@
-<p>
-  online-course works!
-</p>
+<div class="ContentZ">
+  <div class="ContentZ-One">
+    <h1>中国低碳照明网</h1>
+    <p><a routerLink='/online-course' routerLinkActive='active'>在线课程</a></p>
+  </div>
+  <div class="ContentZ-Two">
+    <div class="ContentZ-Two1">
+      <h1>在线课程</h1>
+      <p>
+        <a routerLink='/' routerLinkActive='active'>首页</a> >
+        <a routerLink='/online-course' routerLinkActive='active'>在线课程</a> >
+        <a routerLink='/online-course' routerLinkActive='active'>在线课程</a>
+      </p>
+    </div>
+    <div class="ContentZ-Two2">
+      <ul>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
+        </li>
+      </ul>
+      <ol>
+        <li *ngFor = "let content of contents">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.createTime}}</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
