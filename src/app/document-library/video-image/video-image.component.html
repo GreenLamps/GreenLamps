@@ -16,17 +16,14 @@
       </p>
     </div>
     <div class="ContentZ-Two2">
-      <ul>
-        <li *ngFor = "let content of contents">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
-        </li>
-      </ul>
-      <ol>
-        <li *ngFor = "let content of contents">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>[{{content.createTime}}]</a>
-        </li>
-      </ol>
+      <div class="ContentZ-Two2-2">
+        <div  *ngFor = "let content of contents">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="视频图片封面">
+            <p>{{content.title}}</p>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-

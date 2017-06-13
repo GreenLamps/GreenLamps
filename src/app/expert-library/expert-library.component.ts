@@ -45,7 +45,7 @@ export class ExpertLibraryComponent implements OnInit {
       size: this.itemsPerPage,
       sort: this.sort()
     };
-    this.contentGreenLampService.findByCategory(environment.BRIEF_INTRO, req)
+    this.contentGreenLampService.findByCategory(environment.EXPERT_LIBRARY, req)
       .subscribe(
         (res: Response) => this.onSuccess(res.json(), res.headers),
         (res: Response) => this.onError(res.json())

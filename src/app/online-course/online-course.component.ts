@@ -5,6 +5,7 @@ import {environment} from '../../environments/environment';
 import {ActivatedRoute, Router} from '@angular/router';
 import { EventManager, ParseLinks, PaginationUtil } from 'ng-jhipster';
 import { Response } from '@angular/http';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-online-course',
@@ -14,6 +15,7 @@ import { Response } from '@angular/http';
 export class OnlineCourseComponent implements OnInit {
 
   contents: ContentGreenLamp[];
+  contentsArray: ContentGreenLamp[][3];
   error: any;
   success: any;
   routeData: any;
@@ -31,7 +33,7 @@ export class OnlineCourseComponent implements OnInit {
               private paginationUtil: PaginationUtil,
               private parseLinks: ParseLinks,
   ) {
-    this.itemsPerPage = environment.ITEMS_PER_PAGE;
+    this.itemsPerPage = environment.ITEMS_PER_PAGE_9;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
       this.previousPage = data['pagingParams'].page;
@@ -45,7 +47,7 @@ export class OnlineCourseComponent implements OnInit {
       size: this.itemsPerPage,
       sort: this.sort()
     };
-    this.contentGreenLampService.findByCategory(environment.BRIEF_INTRO, req)
+    this.contentGreenLampService.findByCategory(environment.ONLINE_COURSE, req)
       .subscribe(
         (res: Response) => this.onSuccess(res.json(), res.headers),
         (res: Response) => this.onError(res.json())
@@ -61,6 +63,7 @@ export class OnlineCourseComponent implements OnInit {
   }
   private onSuccess(data, headers): void {
     this.contents = data;
+    this.contentsArray = data;
     this.totalItems = headers.get('X-Total-Count');
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;
