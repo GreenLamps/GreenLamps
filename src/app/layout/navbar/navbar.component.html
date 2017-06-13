@@ -75,20 +75,7 @@
       <a routerLink='/expert-library' routerLinkActive='active'>专家库</a>
     </div>
   </div>
-  <div id="fenggouyi">
-    <ul class="ul1">
-      <li class="active"><img src="../../../assets/img/lb1.jpg" alt="轮播图片"></li>
-      <li><img src="../../../assets/img/lb2.jpg" alt="轮播图片"></li>
-      <li><img src="../../../assets/img/lb1.jpg" alt="轮播图片"></li>
-      <li><img src="../../../assets/img/lb2.jpg" alt="轮播图片"></li>
-    </ul>
-    <div id="num_list">
-      <ul>
-        <li><span class="active_num"></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-      </ul>
-    </div>
+  <div id="fenggouyi" class="wrapper">
+    <carousel [sources]="imageSources" [config]="config"></carousel>
   </div>
 </div>
