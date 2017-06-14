@@ -14,6 +14,10 @@ import { Response } from '@angular/http';
 export class VideoImageComponent implements OnInit {
 
   contents: ContentGreenLamp[];
+  firstLine: ContentGreenLamp[];
+  secondLine: ContentGreenLamp[];
+  thirdLine: ContentGreenLamp[];
+  lastLine: ContentGreenLamp[];
   error: any;
   success: any;
   routeData: any;
@@ -31,7 +35,7 @@ export class VideoImageComponent implements OnInit {
               private paginationUtil: PaginationUtil,
               private parseLinks: ParseLinks,
   ) {
-    this.itemsPerPage = environment.ITEMS_PER_PAGE;
+    this.itemsPerPage = environment.ITEMS_PER_PAGE_12;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
       this.previousPage = data['pagingParams'].page;

@@ -12,16 +12,39 @@
       </p>
     </div>
     <div class="ContentZ-Two2">
-      <ul>
-        <li *ngFor = "let content of contents">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.title}}</a>
-        </li>
-      </ul>
-      <ol>
-        <li *ngFor = "let content of contents">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>[{{content.createTime}}]</a>
-        </li>
-      </ol>
+
+      <div class="ContentZ-Two2-2" *ngIf="firstLine.length>0">
+        <div *ngFor="let content of firstLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="刊物封面">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="secondLine.length>0">
+        <div *ngFor="let content of secondLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="刊物封面">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="thirdLine.length>0">
+        <div *ngFor="let content of thirdLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="刊物封面">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="lastLine.length>0">
+        <div *ngFor="let content of lastLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="刊物封面">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   baseUrl: 'http://localhost:8080',
   ITEMS_PER_PAGE: 20,
+  ITEMS_PER_PAGE_5: 5,
   ITEMS_PER_PAGE_9: 9,
   ITEMS_PER_PAGE_12: 12,
   HOME: 1,

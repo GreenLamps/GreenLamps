@@ -11,7 +11,11 @@ import { Response } from '@angular/http';
   styleUrls: ['./document-library.component.css']
 })
 export class DocumentLibraryComponent implements OnInit {
-  contents: ContentGreenLamp[];
+  contents: ContentGreenLamp[]
+  firstLine: ContentGreenLamp[];
+  secondLine: ContentGreenLamp[];
+  thirdLine: ContentGreenLamp[];
+  lastLine: ContentGreenLamp[];
   error: any;
   success: any;
   routeData: any;
@@ -29,7 +33,7 @@ export class DocumentLibraryComponent implements OnInit {
               private paginationUtil: PaginationUtil,
               private parseLinks: ParseLinks,
   ) {
-    this.itemsPerPage = environment.ITEMS_PER_PAGE;
+    this.itemsPerPage = environment.ITEMS_PER_PAGE_12;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
       this.previousPage = data['pagingParams'].page;
@@ -59,6 +63,10 @@ export class DocumentLibraryComponent implements OnInit {
   }
   private onSuccess(data, headers): void {
     this.contents = data;
+    this.firstLine = data.slice(0, 3);
+    this.secondLine = data.slice(3, 6);
+    this.thirdLine = data.slice(6, 9);
+    this.lastLine = data.slice(9, 12);
     this.totalItems = headers.get('X-Total-Count');
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;

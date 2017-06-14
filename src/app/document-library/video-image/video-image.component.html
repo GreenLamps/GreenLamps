@@ -16,12 +16,36 @@
       </p>
     </div>
     <div class="ContentZ-Two2">
-      <div class="ContentZ-Two2-2">
-        <div  *ngFor = "let content of contents">
+      <div class="ContentZ-Two2-2" *ngIf="firstLine.length>0">
+        <div *ngFor="let content of firstLine">
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
-            <img src="{{content.cover}}" alt="视频图片封面">
-            <p>{{content.title}}</p>
+            <img src="{{content.cover}}" alt="视频图片">
           </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="secondLine.length>0">
+        <div *ngFor="let content of secondLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="视频图片">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="thirdLine.length>0">
+        <div *ngFor="let content of thirdLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="视频图片">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
+        </div>
+      </div>
+      <div class="ContentZ-Two2-2" *ngIf="lastLine.length>0">
+        <div *ngFor="let content of lastLine">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
+            <img src="{{content.cover}}" alt="视频图片">
+          </a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
         </div>
       </div>
     </div>

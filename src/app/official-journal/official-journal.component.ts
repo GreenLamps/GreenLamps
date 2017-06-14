@@ -13,6 +13,10 @@ import { Response } from '@angular/http';
 })
 export class OfficialJournalComponent implements OnInit {
   contents: ContentGreenLamp[];
+  firstLine: ContentGreenLamp[];
+  secondLine: ContentGreenLamp[];
+  thirdLine: ContentGreenLamp[];
+  lastLine: ContentGreenLamp[];
   error: any;
   success: any;
   routeData: any;
@@ -60,6 +64,10 @@ export class OfficialJournalComponent implements OnInit {
   }
   private onSuccess(data, headers): void {
     this.contents = data;
+    this.firstLine = data.slice(0, 3);
+    this.secondLine = data.slice(3, 6);
+    this.thirdLine = data.slice(6, 9);
+    this.lastLine = data.slice(9, 12);
     this.totalItems = headers.get('X-Total-Count');
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;

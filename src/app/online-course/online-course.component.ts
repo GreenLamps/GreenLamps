@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ContentGreenLamp} from '../entities/content/content-green-lamp.model';
 import {ContentGreenLampService} from '../entities/content/content-green-lamp.service';
 import {environment} from '../../environments/environment';
 import {ActivatedRoute, Router} from '@angular/router';
-import { EventManager, ParseLinks, PaginationUtil } from 'ng-jhipster';
-import { Response } from '@angular/http';
-import {forEach} from "@angular/router/src/utils/collection";
+import {EventManager, ParseLinks, PaginationUtil} from 'ng-jhipster';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-online-course',
@@ -15,7 +14,9 @@ import {forEach} from "@angular/router/src/utils/collection";
 export class OnlineCourseComponent implements OnInit {
 
   contents: ContentGreenLamp[];
-  contentsArray: ContentGreenLamp[][3];
+  firstLine: ContentGreenLamp[];
+  secondLine: ContentGreenLamp[];
+  lastLine: ContentGreenLamp[];
   error: any;
   success: any;
   routeData: any;
@@ -27,12 +28,12 @@ export class OnlineCourseComponent implements OnInit {
   predicate: any;
   previousPage: any;
   reverse: any;
+
   constructor(private contentGreenLampService: ContentGreenLampService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
               private paginationUtil: PaginationUtil,
-              private parseLinks: ParseLinks,
-  ) {
+              private parseLinks: ParseLinks,) {
     this.itemsPerPage = environment.ITEMS_PER_PAGE_9;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
@@ -41,6 +42,7 @@ export class OnlineCourseComponent implements OnInit {
       this.predicate = data['pagingParams'].predicate;
     });
   }
+
   ngOnInit() {
     const req = {
       page: this.page - 1,
@@ -54,6 +56,7 @@ export class OnlineCourseComponent implements OnInit {
       );
     return;
   }
+
   sort() {
     const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
     if (this.predicate !== 'id') {
@@ -61,9 +64,12 @@ export class OnlineCourseComponent implements OnInit {
     }
     return result;
   }
+
   private onSuccess(data, headers): void {
     this.contents = data;
-    this.contentsArray = data;
+    this.firstLine = data.slice(0, 3);
+    this.secondLine = data.slice(3, 6);
+    this.lastLine = data.slice(6, 9);
     this.totalItems = headers.get('X-Total-Count');
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;
@@ -72,4 +78,5 @@ export class OnlineCourseComponent implements OnInit {
   private onError(error): void {
     console.error(error.message, null, null);
   }
+
 }

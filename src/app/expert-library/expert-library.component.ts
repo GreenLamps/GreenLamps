@@ -31,7 +31,7 @@ export class ExpertLibraryComponent implements OnInit {
               private paginationUtil: PaginationUtil,
               private parseLinks: ParseLinks,
   ) {
-    this.itemsPerPage = environment.ITEMS_PER_PAGE;
+    this.itemsPerPage = environment.ITEMS_PER_PAGE_5;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
       this.previousPage = data['pagingParams'].page;
