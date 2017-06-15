@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="ContentZ-Two2">
-      <div class="ContentZ-Two2-2" *ngIf="firstLine.length>0">
+      <div class="ContentZ-Two2-2" *ngIf="firstLine!= null && firstLine.length>0">
         <div *ngFor="let content of firstLine">
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
             <img src="{{content.cover}}" alt="在线课程封面">
@@ -20,7 +20,7 @@
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
         </div>
       </div>
-      <div class="ContentZ-Two2-2" *ngIf="secondLine.length>0">
+      <div class="ContentZ-Two2-2" *ngIf="secondLine!= null && secondLine.length>0">
         <div *ngFor="let content of secondLine">
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
             <img src="{{content.cover}}" alt="在线课程封面">
@@ -28,7 +28,7 @@
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'><p>{{content.title}}</p></a>
         </div>
       </div>
-      <div class="ContentZ-Two2-2" *ngIf="lastLine.length>0">
+      <div class="ContentZ-Two2-2" *ngIf="lastLine!= null && lastLine.length>0">
         <div *ngFor="let content of lastLine">
           <a routerLink='/details/{{content.id}}' routerLinkActive='active'>
             <img src="{{content.cover}}" alt="在线课程封面">

@@ -7,9 +7,4 @@ import {DetailsComponent} from './details.component';
 export const DETAILS_ROUTE: Route = {
   path: 'details/:id',
   component: DetailsComponent,
-  data: {
-    title: 'ddd',
-    content: '33',
-    createTime: '22',
-  },
 }

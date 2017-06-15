@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ContentGreenLamp} from '../entities/content/content-green-lamp.model';
 import {ContentGreenLampService} from '../entities/content/content-green-lamp.service';
 import {environment} from '../../environments/environment';
 import {ActivatedRoute, Router} from '@angular/router';
-import { EventManager, ParseLinks, PaginationUtil } from 'ng-jhipster';
-import { Response } from '@angular/http';
+import {EventManager, ParseLinks, PaginationUtil} from 'ng-jhipster';
+import {Response} from '@angular/http';
+import {findLast} from "@angular/compiler/src/directive_resolver";
 
 @Component({
   selector: 'app-official-journal',
@@ -17,6 +18,7 @@ export class OfficialJournalComponent implements OnInit {
   secondLine: ContentGreenLamp[];
   thirdLine: ContentGreenLamp[];
   lastLine: ContentGreenLamp[];
+  size: number;
   error: any;
   success: any;
   routeData: any;
@@ -28,12 +30,12 @@ export class OfficialJournalComponent implements OnInit {
   predicate: any;
   previousPage: any;
   reverse: any;
+
   constructor(private contentGreenLampService: ContentGreenLampService,
               private activatedRoute: ActivatedRoute,
               private router: Router,
               private paginationUtil: PaginationUtil,
-              private parseLinks: ParseLinks,
-  ) {
+              private parseLinks: ParseLinks,) {
     this.itemsPerPage = environment.ITEMS_PER_PAGE;
     this.routeData = this.activatedRoute.data.subscribe((data) => {
       this.page = data['pagingParams'].page;
@@ -42,6 +44,7 @@ export class OfficialJournalComponent implements OnInit {
       this.predicate = data['pagingParams'].predicate;
     });
   }
+
   ngOnInit() {
     const req = {
       page: this.page - 1,
@@ -55,6 +58,7 @@ export class OfficialJournalComponent implements OnInit {
       );
     return;
   }
+
   sort() {
     const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
     if (this.predicate !== 'id') {
@@ -62,12 +66,13 @@ export class OfficialJournalComponent implements OnInit {
     }
     return result;
   }
+
   private onSuccess(data, headers): void {
     this.contents = data;
-    this.firstLine = data.slice(0, 3);
-    this.secondLine = data.slice(3, 6);
-    this.thirdLine = data.slice(6, 9);
-    this.lastLine = data.slice(9, 12);
+      this.firstLine = data.slice(0, 3);
+      this.secondLine = data.slice(3, 6);
+      this.thirdLine = data.slice(6, 9);
+      this.lastLine = data.slice(9, 12);
     this.totalItems = headers.get('X-Total-Count');
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;

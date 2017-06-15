@@ -12,9 +12,14 @@
       <div class="Logo-Two2">咨询电话：</div>
       <div class="Logo-Two3">010-68720069-827</div>
     </div>
+
     <div class="Logo-San">
-      <div class="Logo-San1">设为主页</div>
-      <div class="Logo-San2">加入收藏</div>
+      <div class="Logo-San1">
+        <a href="javascript:void(0);" onclick="SetHome(this,window.location.href);">设为主页</a>
+      </div>
+      <div class="Logo-San2">
+        <a onclick="AddFavorite()" href="#">加入收藏</a>
+      </div>
     </div>
   </div>
   <div class="Dh">
@@ -31,7 +36,7 @@
       </div>
     </div>
     <div class="Dh-San">
-      <a routerLink='/trade-advisory' routerLinkActive='active'>行业咨询</a>
+      <a routerLink='/trade-advisory' routerLinkActive='active'>行业资讯</a>
       <div class="Dh-San1">
         <div class="Dh-San1-1"><a routerLink='/trade-advisory/domestic-hotspot' routerLinkActive='active'>国内热点</a></div>
         <div class="Dh-San1-2"><a routerLink='/trade-advisory/international-hotspot' routerLinkActive='active'>国际聚焦</a></div>
