@@ -23,5 +23,5 @@ import {InternationalHotspotComponent} from './international-hotspot.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class InternationalHotspotModule{
+export class InternationalHotspotModule {
 }

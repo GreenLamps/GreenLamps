@@ -9,12 +9,8 @@
     </div>
     <div id="demo">
       <div id="indemo">
-        <div id="demo1">
-          <a href="content.html"><img src="./img/aljx1.jpg" border="0" style="margin-left:0.522rem;" /></a>
-          <a href="content.html"><img src="./img/aljx2.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/aljx1.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/aljx2.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/aljx1.jpg" border="0" style="margin-left:0.322rem;" /></a>
+        <div id="demo1" *ngFor = "let content of selectedCases">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
         </div>
         <div id="demo2"></div>
       </div>
@@ -29,11 +25,8 @@
         <a href="zhaobiao.html"><div class="Con-One1-4">MORE</div></a>
       </div>
       <div id="fenggouyi1">
-        <ul class="ul11">
-          <li class="active1"><img src="img/xlb1.jpg" alt=""></li>
-          <li><img src="img/xlb2.jpg" alt=""></li>
-          <li><img src="img/xlb1.jpg" alt=""></li>
-          <li><img src="img/xlb2.jpg" alt=""></li>
+        <ul class="ul11" *ngFor = "let content of biddingProcurement">
+          <li class="active1"><img src="{{content.cover}}" alt=""></li>
         </ul>
         <div id="num_list1">
           <ul>
@@ -44,16 +37,8 @@
           </ul>
         </div>
       </div>
-      <ul class="Con-Two1-2">
-        <li style="margin-top:0.01rem;">低碳照明，让生活更美好！......<a href="content.html"><span >[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！......<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！......<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
-        <li>低碳照明，让生活更美好！.....<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two1-2" *ngFor = "let content of biddingProcurement">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two2">
@@ -63,16 +48,8 @@
         <div class="Con-One1-3">VIEWPOINTS</div>
         <a href="zhuanjia.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2">
-        <li style="margin-top:0.01rem;">黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
-        <li>黄跃辉-低碳照明，是城市照明......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2" *ngFor = "let content of expertViews">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
   </div>
@@ -84,16 +61,8 @@
         <div class="Con-One1-3">DOMESTIC HOT</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two1-2">
-        <li style="margin-top:0.01rem;">"绿色照明中的新光源和......<a href="content.html"><span >[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two1-2" *ngFor = "let content of domesticHot">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two4">
@@ -103,13 +72,8 @@
         <div class="Con-One1-3">DYNAMIC</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two4-2">
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
-        <li><a href="content.html"><img src="img/xlb2.jpg" alt=""></a></li>
+      <ul class="Con-Two4-2" *ngFor = "let content of dynamic">
+        <li><a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" alt=""></a></li>
       </ul>
     </div>
     <div class="Con-Two5">
@@ -119,16 +83,8 @@
         <div class="Con-One1-3">COMMENT</div>
         <a href="shifan.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2">
-        <li style="margin-top:0.01rem;">权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2" *ngFor = "let content of comment">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two6"><img src="img/zhong.jpg" alt=""></div>
@@ -141,9 +97,9 @@
       <a href="content.html"><div class="Con-One1-4">MORE</div></a>
     </div>
     <div class="Con-Si2">
-      <a href="content.html"><img src="img/hzhb.jpg" alt=""></a>
-      <a href="content.html"><h1>许东亮</h1></a>
-      <a href="content.html"><p>个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏个人专栏</p></a>
+      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><img src="{{personalColumn.cover}}" alt=""></a>
+      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><h1>{{personalColumn.author}}</h1></a>
+      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><p>{{personalColumn.content}}</p></a>
     </div>
   </div>
   <div class="Con-Two">
@@ -153,16 +109,8 @@
         <div class="Con-One1-2">国际聚焦</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two1-2">
-        <li style="margin-top:0.01rem;">"绿色照明中的新光源和新技术"......<a href="content.html"><span >[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
-        <li>"绿色照明中的新光源和新技术"......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two1-2" *ngFor = "let content of internationalHotspot">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two4">
@@ -171,16 +119,8 @@
         <div class="Con-One1-2">中央部署文件</div>
         <a href="zhengce.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2">
-        <li style="margin-top:0.01rem;">权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2" *ngFor = "let content of centralgovDoc">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two5">
@@ -189,16 +129,8 @@
         <div class="Con-One1-2">地方政府文件</div>
         <a href="zhengce.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2">
-        <li style="margin-top:0.01rem;">权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
-        <li>权威点评权威点评权威点评权威点评权......<a href="content.html"><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2" *ngFor = "let content of localgovDoc">
+        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
   </div>
@@ -211,12 +143,8 @@
     </div>
     <div id="demoA">
       <div id="indemoA">
-        <div id="demo1A">
-          <a href="content.html"><img src="./img/zj.jpg" border="0" style="margin-left:0.522rem;" /></a>
-          <a href="content.html"><img src="./img/zj.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/zj.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/zj.jpg" border="0" style="margin-left:0.322rem;" /></a>
-          <a href="content.html"><img src="./img/zj.jpg" border="0" style="margin-left:0.322rem;" /></a>
+        <div id="demo1A" *ngFor = "let content of expertLibrary">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
         </div>
         <div id="demo2A"></div>
       </div>

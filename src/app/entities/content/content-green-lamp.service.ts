@@ -31,6 +31,26 @@ export class ContentGreenLampService {
     return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/${id}`, options)
       .map((res: Response) => this.convertResponse(res));
   }
+
+  /**
+   * find by category id and get the top 10
+   * @param id
+   * @param top
+   * @returns {Observable<R>}
+   */
+  findTopContentByCategory(id: number, top: number): Observable<Response> {
+    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/${id}/${top}`)
+      .map((res: Response) => this.convertResponse(res));
+  }
+
+  /**
+   * find top one by category id
+   * @param categoryId
+   * @returns {Observable<Response>}
+   */
+  findTopOneContentByCategory(categoryId: number): Observable<Response> {
+    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/top/${categoryId}`)
+  }
   private convertResponse(res: Response): Response {
     console.log(res);
     const jsonResponse = res.json();
