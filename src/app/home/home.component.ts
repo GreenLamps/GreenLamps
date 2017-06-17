@@ -4,11 +4,13 @@ import {ActivatedRoute} from '@angular/router';
 import {ContentGreenLamp} from '../entities/content/content-green-lamp.model';
 import {environment} from '../../environments/environment';
 import { Response } from '@angular/http';
+import {CarouselConfig} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  providers: [{provide: CarouselConfig, useValue: {interval: 1500, noPause: true}}],
 })
 export class HomeComponent implements OnInit {
   selectedCases: ContentGreenLamp[];
@@ -29,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.contentGreenLampService.findTopContentByCategory(environment.SELECTED_CASE, 10)
       .subscribe(
         (res: Response) => this.selectedCases = res.json(),
-        (res: Response) => console.error('loading selected cases error')
+            (res: Response) => console.error('loading selected cases error')
       );
     this.contentGreenLampService.findTopContentByCategory(environment.BIDDING_PROCUREMENT, 10)
       .subscribe(
@@ -52,10 +54,7 @@ export class HomeComponent implements OnInit {
         (res: Response) => console.error('loading dynamic error')
       );
     this.contentGreenLampService.findTopOneContentByCategory(environment.EXPERT_LIBRARY)
-      .subscribe(
-        (res: Response) => this.personalColumn = res.json(),
-        (res: Response) => console.error('loading personal column error')
-      );
+      .subscribe((personalColumn) => this.personalColumn = personalColumn);
     this.contentGreenLampService.findTopContentByCategory(environment.INTERNATIONAL_HOTSPOT, 10)
       .subscribe(
         (res: Response) => this.internationalHotspot = res.json(),

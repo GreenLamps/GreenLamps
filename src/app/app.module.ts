@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import { CarouselModule } from 'angular4-carousel';
+import { CarouselModule } from 'ngx-bootstrap';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './layout/navbar/navbar.component';
@@ -31,7 +31,6 @@ import {DetailsModule} from './details/details.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CarouselModule,
     HomeModule,
     LclResearchModule,
     TradeAdvisoryModule,
@@ -44,6 +43,7 @@ import {DetailsModule} from './details/details.module';
     OnlineCourseModule,
     ExpertLibraryModule,
     DetailsModule,
+    CarouselModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

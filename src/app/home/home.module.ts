@@ -4,11 +4,13 @@ import {HOME_ROUTE} from './home.route';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {HomeComponent} from './home.component';
+import { CarouselModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot([ HOME_ROUTE ], { useHash: true })
   ],
   exports: [

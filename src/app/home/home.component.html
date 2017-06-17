@@ -9,9 +9,15 @@
     </div>
     <div id="demo">
       <div id="indemo">
-        <div id="demo1" *ngFor = "let content of selectedCases">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
+        <div id="demo1">
+          <marquee direction="left" behavior="alternate">
+          <a *ngFor = "let content of selectedCases" routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
+          </marquee>
         </div>
+
+        <!--<div id="demo1" *ngFor = "let content of selectedCases">
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
+        </div>-->
         <div id="demo2"></div>
       </div>
     </div>
@@ -25,20 +31,14 @@
         <a href="zhaobiao.html"><div class="Con-One1-4">MORE</div></a>
       </div>
       <div id="fenggouyi1">
-        <ul class="ul11" *ngFor = "let content of biddingProcurement">
-          <li class="active1"><img src="{{content.cover}}" alt=""></li>
-        </ul>
-        <div id="num_list1">
-          <ul>
-            <li><span class="active_num1"></span></li>
-            <li><span></span></li>
-            <li><span></span></li>
-            <li><span></span></li>
-          </ul>
-        </div>
+        <carousel>
+          <slide *ngFor = "let content of biddingProcurement">
+            <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src='{{content.cover}}' style="width: 2.7rem;height: 3.2rem;" alt=""></a>
+          </slide>
+        </carousel>
       </div>
-      <ul class="Con-Two1-2" *ngFor = "let content of biddingProcurement">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
+      <ul class="Con-Two1-2">
+        <li *ngFor = "let content of biddingProcurement" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two2">
@@ -48,8 +48,8 @@
         <div class="Con-One1-3">VIEWPOINTS</div>
         <a href="zhuanjia.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2" *ngFor = "let content of expertViews">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2">
+        <li *ngFor = "let content of expertViews" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
   </div>
@@ -61,8 +61,8 @@
         <div class="Con-One1-3">DOMESTIC HOT</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two1-2" *ngFor = "let content of domesticHot">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
+      <ul class="Con-Two1-2">
+        <li *ngFor = "let content of domesticHot" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two4">
@@ -72,8 +72,8 @@
         <div class="Con-One1-3">DYNAMIC</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two4-2" *ngFor = "let content of dynamic">
-        <li><a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" alt=""></a></li>
+      <ul class="Con-Two4-2">
+        <li *ngFor = "let content of dynamic"><a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" alt=""></a></li>
       </ul>
     </div>
     <div class="Con-Two5">
@@ -83,11 +83,11 @@
         <div class="Con-One1-3">COMMENT</div>
         <a href="shifan.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2" *ngFor = "let content of comment">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2">
+        <li *ngFor = "let content of comment" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
-    <div class="Con-Two6"><img src="img/zhong.jpg" alt=""></div>
+    <div class="Con-Two6"><img src="../../assets/img/zhong.jpg" alt=""></div>
   </div>
   <div class="Con-Si">
     <div class="Con-One1">
@@ -96,10 +96,10 @@
       <div class="Con-One1-3">PERSONAL COLUMN</div>
       <a href="content.html"><div class="Con-One1-4">MORE</div></a>
     </div>
-    <div class="Con-Si2">
-      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><img src="{{personalColumn.cover}}" alt=""></a>
-      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><h1>{{personalColumn.author}}</h1></a>
-      <a routerLink='/details/{{personalColumn.id}}' routerLinkActive='active'><p>{{personalColumn.content}}</p></a>
+    <div class="Con-Si2" *ngIf="personalColumn">
+      <a routerLink="/details/{{personalColumn.id}}" routerLinkActive='active'><img src="{{personalColumn.cover}}" alt=""></a>
+      <a routerLink="/details/{{personalColumn.id}}" routerLinkActive='active'><h1>{{personalColumn.author}}</h1></a>
+      <a routerLink="/details/{{personalColumn.id}}" routerLinkActive='active'><p [innerHTML]="personalColumn.content"></p></a>
     </div>
   </div>
   <div class="Con-Two">
@@ -109,8 +109,8 @@
         <div class="Con-One1-2">国际聚焦</div>
         <a href="hangyezx.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two1-2" *ngFor = "let content of internationalHotspot">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
+      <ul class="Con-Two1-2">
+        <li  *ngFor = "let content of internationalHotspot" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span >[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two4">
@@ -119,8 +119,8 @@
         <div class="Con-One1-2">中央部署文件</div>
         <a href="zhengce.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2" *ngFor = "let content of centralgovDoc">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2">
+        <li *ngFor = "let content of centralgovDoc" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
     <div class="Con-Two5">
@@ -129,8 +129,8 @@
         <div class="Con-One1-2">地方政府文件</div>
         <a href="zhengce.html"><div class="Con-One1-4">MORE</div></a>
       </div>
-      <ul class="Con-Two2-2" *ngFor = "let content of localgovDoc">
-        <li style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
+      <ul class="Con-Two2-2">
+        <li *ngFor = "let content of localgovDoc" style="margin-top:0.01rem;">{{content.title}}<a routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
   </div>
@@ -143,8 +143,10 @@
     </div>
     <div id="demoA">
       <div id="indemoA">
-        <div id="demo1A" *ngFor = "let content of expertLibrary">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
+        <div id="demo1A">
+          <marquee direction="left" behavior="alternate">
+          <a *ngFor = "let content of expertLibrary" routerLink='/details/{{content.id}}' routerLinkActive='active'><img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" /></a>
+          </marquee>
         </div>
         <div id="demo2A"></div>
       </div>

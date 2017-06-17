@@ -48,11 +48,11 @@ export class ContentGreenLampService {
    * @param categoryId
    * @returns {Observable<Response>}
    */
-  findTopOneContentByCategory(categoryId: number): Observable<Response> {
+  findTopOneContentByCategory(categoryId: number): Observable<ContentGreenLamp> {
     return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/top/${categoryId}`)
+      .map((res: Response) => res.json());
   }
   private convertResponse(res: Response): Response {
-    console.log(res);
     const jsonResponse = res.json();
     for (let i = 0; i < jsonResponse.length; i++) {
       jsonResponse[i].createTime = this.dateUtils
