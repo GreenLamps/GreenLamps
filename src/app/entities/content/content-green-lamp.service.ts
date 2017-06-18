@@ -48,9 +48,8 @@ export class ContentGreenLampService {
    * @param categoryId
    * @returns {Observable<Response>}
    */
-  findTopOneContentByCategory(categoryId: number): Observable<ContentGreenLamp> {
-    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/top/${categoryId}`)
-      .map((res: Response) => res.json());
+  findTopOneContentByCategory(categoryId: number): Observable<Response> {
+    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/category/top/${categoryId}`);
   }
   private convertResponse(res: Response): Response {
     const jsonResponse = res.json();

@@ -201,18 +201,7 @@
       <!--</a>-->
     </div>
     <div class="Con-Si1">
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
-      <a href="#"><img src="img/hzhb.jpg" alt="相关网站封面"></a>
+      <a *ngFor = "let content of relatedWebSites" href="{{content.url}}"><img src="{{content.cover}}" alt="相关网站封面"></a>
     </div>
   </div>
 </div>
