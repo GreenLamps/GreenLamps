@@ -1,40 +1,67 @@
 <div class="ContentT">
   <div class="ConT-San">
     <div class="ConT-San1">
-      <div class="ConT-San2"><img src="../../assets/img/b1.jpg" alt=""></div>
+      <div class="ConT-San2"><img src="../../assets/img/b1.jpg" alt="行业资讯"></div>
       <div class="ConT-San3">
-        <a href="content.html"><div>▶&nbsp;&nbsp;行业资讯</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;行业资讯</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;行业资讯</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;行业资讯</div></a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;行业资讯</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;行业资讯</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;行业资讯</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;行业资讯</div>
+        </a>
       </div>
-      <div class="ConT-San2"><img src="../../assets/img/b2.jpg" alt=""></div>
+      <div class="ConT-San2"><img src="../../assets/img/b2.jpg" alt="专家视点"></div>
       <div class="ConT-San3">
-        <a href="content.html"><div>▶&nbsp;&nbsp;专家视点</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;专家视点</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;专家视点
-        </div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;专家视点</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;专家视点</div></a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;专家视点</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;专家视点</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;专家视点
+          </div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;专家视点</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;专家视点</div>
+        </a>
       </div>
-      <div class="ConT-San2"><img src="../../assets/img/b3.jpg" alt=""></div>
+      <div class="ConT-San2"><img src="../../assets/img/b3.jpg" alt="示范工程"></div>
       <div class="ConT-San3">
-        <a href="content.html"><div>▶&nbsp;&nbsp;示范工程</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;示范工程</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;示范工程</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;示范工程</div></a>
-        <a href="content.html"><div>▶&nbsp;&nbsp;示范工程</div></a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;示范工程</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;示范工程</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;示范工程</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;示范工程</div>
+        </a>
+        <a href="content.html">
+          <div>▶&nbsp;&nbsp;示范工程</div>
+        </a>
       </div>
     </div>
-    <div class="ConT-Si">
+    <div class="ConT-Si" *ngIf="content">
       <div class="ConT-Si3">
         <div class="titles">{{content.title}}</div>
-        <div class="infos"><span>时间：{{content.createTime}} </span><span>浏览次数：{{content.viewCount}}</span></div>
-        <div class="contents" [innerHTML]="content.content">
-        </div>
+        <div class="infos"><span>时间：{{content.createTime | date:'yyyy-MM-dd hh:mm:ss'}} </span><span>浏览次数：{{content.viewCount}}</span></div>
+        <div class="contents" [innerHTML]="content.content"></div>
+      </div>
+      <div class="wz">上一篇</div>
+      <div class="wz">下一篇</div>
     </div>
-    <div class="wz">上一篇</div>
-    <div class="wz">下一篇</div>
-  </div>
   </div>
 </div>
