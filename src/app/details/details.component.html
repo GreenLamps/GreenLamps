@@ -41,8 +41,8 @@
         <div class="infos"><span>时间：{{content.createTime | date:'yyyy-MM-dd hh:mm:ss'}} </span><span>浏览次数：{{content.viewCount}}</span></div>
         <div class="contents" [innerHTML]="content.content"></div>
       </div>
-      <div class="wz">上一篇</div>
-      <div class="wz">下一篇</div>
+      <div class="wz"><a *ngIf="preId" routerLink='/details/{{preId}}'>上一篇</a></div>
+      <div class="wz"><a *ngIf="nextId" routerLink='/details/{{nextId}}'>下一篇</a></div>
     </div>
   </div>
 </div>
