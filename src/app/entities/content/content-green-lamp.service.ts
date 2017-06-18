@@ -11,13 +11,8 @@ export class ContentGreenLampService {
   resourceContents = 'contents';
   constructor(private http: Http, private dateUtils: DateUtils) { }
 
-  find(id: number): Observable<ContentGreenLamp> {
-    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/${id}`).map((res: Response) => {
-      const jsonResponse = res.json();
-      jsonResponse.createTime = this.dateUtils
-        .convertDateTimeFromServer(jsonResponse.createTime);
-      return jsonResponse;
-    });
+  find(id: number): Observable<Response> {
+    return this.http.get(`${environment.baseUrl}/${this.resourceApi}/${this.resourceContents}/${id}`);
   }
 
   /**
