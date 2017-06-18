@@ -37,4 +37,5 @@ export const environment = {
   ACADEMIC_PAPER: 25,
   RESEARCH_REPORT: 26,
   VIDEO_IMAGE: 27,
+  RELATED_WEBSITES: 28,
 };

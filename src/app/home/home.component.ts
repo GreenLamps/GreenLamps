@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   centralgovDoc: ContentGreenLamp[];
   localgovDoc: ContentGreenLamp[];
   expertLibrary: ContentGreenLamp[];
+  relatedWebSites: ContentGreenLamp[];
   constructor(private contentGreenLampService: ContentGreenLampService,
               private activatedRoute: ActivatedRoute ) { }
 
@@ -54,7 +55,10 @@ export class HomeComponent implements OnInit {
         (res: Response) => console.error('loading dynamic error')
       );
     this.contentGreenLampService.findTopOneContentByCategory(environment.EXPERT_LIBRARY)
-      .subscribe((personalColumn) => this.personalColumn = personalColumn);
+      .subscribe(
+        (res: Response) => this.personalColumn = res.json(),
+        (res: Response) => console.error('loading personal column error')
+        );
     this.contentGreenLampService.findTopContentByCategory(environment.INTERNATIONAL_HOTSPOT, 10)
       .subscribe(
         (res: Response) => this.internationalHotspot = res.json(),
@@ -74,6 +78,11 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (res: Response) => this.expertLibrary = res.json(),
         (res: Response) => console.error('loading expert library error')
+      );
+    this.contentGreenLampService.findTopContentByCategory(environment.RELATED_WEBSITES, 12)
+      .subscribe(
+        (res: Response) => this.relatedWebSites = res.json(),
+        (res: Response) => console.error('loading related web sites error')
       );
   }
 
