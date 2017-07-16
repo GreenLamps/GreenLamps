@@ -54,6 +54,10 @@ export class HomeComponent implements OnInit {
         (res: Response) => this.dynamic = res.json(),
         (res: Response) => console.error('loading dynamic error')
       );
+    this.contentGreenLampService.findTopContentByCategory(environment.AUTHORITY_COMMENT, 10)
+      .subscribe(
+        (res: Response) => this.comment = res.json(),
+        (res: Response) => console.error('loading comment error'));
     this.contentGreenLampService.findTopOneContentByCategory(environment.EXPERT_LIBRARY)
       .subscribe(
         (res: Response) => this.personalColumn = res.json(),

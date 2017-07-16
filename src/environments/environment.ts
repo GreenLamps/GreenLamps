@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://www.lowcarbon-lighting.com:8080',
   ITEMS_PER_PAGE: 20,
   ITEMS_PER_PAGE_5: 5,
   ITEMS_PER_PAGE_9: 9,
