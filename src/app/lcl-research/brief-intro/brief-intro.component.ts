@@ -39,16 +39,7 @@ export class BriefIntroComponent implements OnInit {
     });
   }
   ngOnInit() {
-    const req = {
-      page: this.page - 1,
-      size: this.itemsPerPage,
-      sort: this.sort()
-    };
-    this.contentGreenLampService.findByCategory(environment.BRIEF_INTRO, req)
-      .subscribe(
-        (res: Response) => this.onSuccess(res.json(), res.headers),
-        (res: Response) => this.onError(res.json())
-      );
+    this.loadAll();
     return;
   }
   sort() {
@@ -64,10 +55,36 @@ export class BriefIntroComponent implements OnInit {
     this.links = this.parseLinks.parse(headers.get('Link'));
     this.queryCount = this.totalItems;
   }
+  loadAll() {
+    const req = {
+      page: this.page - 1,
+      size: this.itemsPerPage,
+      sort: this.sort()
+    };
+    this.contentGreenLampService.findByCategory(environment.BRIEF_INTRO, req)
+      .subscribe(
+        (res: Response) => this.onSuccess(res.json(), res.headers),
+        (res: Response) => this.onError(res.json())
+      );
+  }
 
   private onError(error): void {
     console.error(error.message, null, null);
   }
 
-
+  loadPage(page: number) {
+    if (page !== this.previousPage) {
+      this.previousPage = page;
+      this.transition();
+    }
+  }
+  transition() {
+    this.router.navigate(['/lcl-research/center-briefintro'], { queryParams:
+      {
+        page: this.page,
+        sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
+      }
+    });
+    this.loadAll();
+  }
 }

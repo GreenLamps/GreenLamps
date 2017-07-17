@@ -38,7 +38,7 @@
     <div class="ConT-Si" *ngIf="content">
       <div class="ConT-Si3">
         <div class="titles">{{content.title}}</div>
-        <div class="infos"><span>时间：{{content.createTime | date:'yyyy-MM-dd hh:mm:ss'}} </span><span>浏览次数：{{content.viewCount}}</span></div>
+        <div class="infos"><span>时间：{{content.createTime | date:'yyyy-MM-dd HH:mm:ss'}} </span><span>浏览次数：{{content.viewCount}}</span></div>
         <div class="contents" [innerHTML]="content.content"></div>
       </div>
       <div class="wz"><a *ngIf="preId" routerLink='/details/{{preId}}'>上一篇</a></div>
