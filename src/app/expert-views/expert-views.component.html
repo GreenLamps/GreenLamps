@@ -19,7 +19,7 @@
       </ul>
       <ol>
         <li *ngFor = "let content of contents">
-          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.createTime}}</a>
+          <a routerLink='/details/{{content.id}}' routerLinkActive='active'>{{content.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</a>
         </li>
       </ol>
     </div>
