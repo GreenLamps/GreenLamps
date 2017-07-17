@@ -11,7 +11,7 @@
     <div id="demo">
       <div id="indemo">
         <div id="demo1">
-          <marquee direction="left" behavior="alternate">
+          <marquee direction="left" behavior="alternate" style="width: 12.5rem;">
             <a *ngFor="let content of selectedCases" routerLink='/details/{{content.id}}' routerLinkActive='active'>
               <img src="{{content.cover}}" border="0" style="margin-left:0.522rem;" alt="精选案例图片"/>
             </a>
@@ -59,7 +59,7 @@
         </a>
       </div>
       <ul class="Con-Two2-2">
-        <li *ngFor="let content of expertViews" style="margin-top:0.01rem;">{{content.title}}<a
+        <li *ngFor="let content of expertViews" style="margin-top:0.01rem;width: 4.5rem;">{{content.title}}<a
           routerLink='/details/{{content.id}}' routerLinkActive='active'><span>[详情]</span></a></li>
       </ul>
     </div>
@@ -120,7 +120,7 @@
         <div class="Con-One1-4">MORE</div>
       </a>
     </div>
-    <div class="Con-Si2" *ngIf="personalColumn">
+    <div class="Con-Si2" *ngIf="personalColumn" STYLE="text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;overflow: hidden;">
       <a routerLink="/details/{{personalColumn.id}}" routerLinkActive='active'>
         <img src="{{personalColumn.cover}}" alt="个人专栏照片"></a>
       <a routerLink="/details/{{personalColumn.id}}" routerLinkActive='active'><h1>{{personalColumn.author}}</h1></a>
